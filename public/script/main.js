@@ -36,3 +36,20 @@ let couteau = {
     action : "Couper"
 }
 
+// Créez des produits (ingrédients) à mettre dans le magasin qui serviront à créer l'omelette (oignon, oeuf, epice, fromage, ...) avec les propriétés :
+
+class ingredient {
+    constructor (nom, etats, prix){
+        this.nom = nom
+        this.etats = etats
+        this.prix = prix
+    }
+}
+
+let oignon = new ingredient ("Oignon", ["entier", "frais"], 2.5)
+let oeuf =  new ingredient ("Oeuf", ["entier", "frais"], 5)
+let origan = new ingredient ("origan", ["moulu"], 1.5)
+let fromage = new ingredient ("fromage", ["rapé", "sous vide"], 4.5 )
+
+// Créez un lieu "epicerie" avec les propriétés :
+
