@@ -53,3 +53,27 @@ let fromage = new ingredient ("fromage", ["rapé", "sous vide"], 4.5 )
 
 // Créez un lieu "epicerie" avec les propriétés :
 
+let epicerie = {
+    nom: "epicerie",
+    personnes: [],
+    paniers : {
+        type : "panier",
+        contenu : []
+    },
+    ingredients : [
+        oignon,
+        oeuf,
+        origan,
+        fromage
+    ]
+}
+
+// Créez un outil (poêle).
+
+let poêle = {
+    nom : "poêle",
+    contenu : [],
+    cuire(){
+        
+    }
+}
