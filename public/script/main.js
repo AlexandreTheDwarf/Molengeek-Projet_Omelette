@@ -1,21 +1,21 @@
 // Créez un objet personnage avec les propriétés et méthodes suivantes :
 
 class Personnage {
-    constructor (nom, lieu, argent, mainDroite, MainGauche){
+    constructor (nom, lieu, argent, mainDroite, mainGauche){
         this.nom = nom
         this.lieu = lieu
         this.argent = argent
         this.mainDroite = mainDroite
-        this.MainGauche = MainGauche
-        this.seDeplacer(this.lieu) = () => {
+        this.mainGauche = mainGauche
+    }
+    seDeplacer(lieu) {
+        // Ton code ici
+    }
+    payerArticle(article){
 
-        }
-        this.payerArticle(article) = () => {
-            
-        }
-        this.couper(ingredient, outil) = () => {
+    }
+    couper(ingredient, outil){
 
-        }
     }
 }
 
@@ -56,10 +56,10 @@ let fromage = new ingredient ("fromage", ["rapé", "sous vide"], 4.5 )
 let epicerie = {
     nom: "epicerie",
     personnes: [],
-    paniers : {
-        type : "panier",
-        contenu : []
-    },
+    paniers: [
+        { type: "panier", contenu: [] },
+        { type: "panier", contenu: [] }
+    ],
     ingredients : [
         oignon,
         oeuf,
@@ -71,9 +71,32 @@ let epicerie = {
 // Créez un outil (poêle).
 
 let poêle = {
-    nom : "poêle",
-    contenu : [],
-    cuire(){
-        
+    nom: "poêle",
+    contenu: [], 
+    cuire() {
+        if (this.contenu.length === 0) {
+            console.log("La poêle est vide. Rien à cuire.");
+            return;
+        }
+
+        console.log("Cuisson en cours...");
+        setTimeout(() => {
+            let melangeCuit = {
+                nom: this.contenu[0].nom,
+                etat: "cuit",
+                prix: this.contenu[0].prix
+            };
+            this.contenu = [melangeCuit];
+            console.log(`Le mélange est maintenant ${melangeCuit.etat} !`);
+        }, 4000);
+    }
+};
+
+// Créez un objet  bol avec les attribut suivant:
+
+let bol = {
+    contenu: [],
+    melanger(nomDuMelange){
+        this.contenu = [nomDuMelange]
     }
 }
